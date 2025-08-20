@@ -152,7 +152,7 @@ class RQVAE(nn.Module):
         self.unique_indices = [0]
         for i, c in enumerate(self.all_indices[1:]):
             str_id = ",".join(map(str, c.tolist()))
-            index = self.all_indices[i].tolist()
+            index = c.tolist()
             self.code2item[str_id].append(i + 1)
             unique_index = len(self.code2item[str_id]) - 1
             self.full_all_indices.append(index + [unique_index])
